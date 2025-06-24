@@ -1024,6 +1024,33 @@
 </footer>
 <!-- End Footer -->
 
+<!-- Floating Button Group -->
+    <div class="floating-btn-group" id="floatingBtns">
+        <button class="floating-btn call" onclick="window.location.href='tel:+971501234567'">
+            <i class="fas fa-phone"></i>
+            <span class="btn-tooltip">Call Us</span>
+        </button>
+        <button class="floating-btn quote" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-envelope"></i>
+            <span class="btn-tooltip">Get Quote</span>
+        </button>
+        <button class="floating-btn whatsapp" onclick="window.open('https://wa.me/971501234567', '_blank')">
+            <i class="fab fa-whatsapp"></i>
+            <span class="btn-tooltip">WhatsApp</span>
+        </button>
+
+        <button class="floating-btn hide-btn" id="hideBtn" onclick="toggleFloatingButtons()">
+            <i class="fas fa-times"></i>
+            <span class="btn-tooltip">Hide</span>
+        </button>
+    </div>
+
+    <!-- Show Button (appears when buttons are hidden) -->
+    <button class="floating-btn" id="showBtn" onclick="toggleFloatingButtons()" style="display: none; position: fixed; right: 20px; bottom: 50%; transform: translateY(50%);  color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <i class="fas fa-comments"></i>
+    </button>
+
+
 <!-- Start Scroll Top -->
 <div class="go-top"><i class="fas fa-angle-up"></i><i class="fas fa-angle-up"></i></div>
 <!-- End Scroll Top -->
@@ -1044,5 +1071,38 @@
 <!-- CUSTOM JS -->
 <script src="vendor/js/contact_us.js"></script>
 <script src="./js/script.js"></script>
+  <script>
+        function toggleFloatingButtons() {
+            const floatingBtns = document.getElementById('floatingBtns');
+            const showBtn = document.getElementById('showBtn');
+
+            if (floatingBtns.classList.contains('hidden')) {
+                floatingBtns.classList.remove('hidden');
+                showBtn.style.display = 'none';
+            } else {
+                floatingBtns.classList.add('hidden');
+                showBtn.style.display = 'flex';
+                showBtn.alignItems = 'center';
+                showBtn.justifyContent = 'center';
+            }
+        }
+
+        // Auto-hide when scrolling down
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const floatingBtns = document.getElementById('floatingBtns');
+            const showBtn = document.getElementById('showBtn');
+            let st = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (st > lastScrollTop && !floatingBtns.classList.contains('hidden')) {
+                // Scrolling down
+                floatingBtns.classList.add('hidden');
+                showBtn.style.display = 'flex';
+                showBtn.alignItems = 'center';
+                showBtn.justifyContent = 'center';
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        }, false);
+    </script>
 </body>
 </html>

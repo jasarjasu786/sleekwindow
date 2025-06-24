@@ -1,91 +1,78 @@
-/*-- Use For Custom Styling --*/
+.floating-btn-group {
+            position: fixed;
+            right: 20px;
+            bottom: 50%;
+            transform: translateY(50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FC933D;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+            transition: all 0.3s ease;
+            position: relative;
+            border: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-btn.call {
+            background-color: #2ecc71;
+        }
+
+        .floating-btn.whatsapp {
+            background-color: #25D366;
+        }
+
+        .floating-btn.quote {
+            background-color: #FC933D;
+
+        }
+
+        .floating-btn.hide-btn {
+            background-color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .btn-tooltip {
+            position: absolute;
+            right: 60px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .floating-btn:hover .btn-tooltip {
+            opacity: 1;
+        }
+
+        .hidden {
+            transform: translateX(100px) translateY(50%);
+            opacity: 0;
+            pointer-events: none;
+        }
 
 
 
-/*=============================
-   Slider
-=============================*/
-.wexim .tp-bullet {
-    position: relative;
-    display: contents;
-    background: transparent;
-    cursor: pointer;
-    box-sizing: content-box;
-}
 
-.wexim .tp-bullet .tp-bullet-inner {
-    width: 13px;
-    height: 13px;
-    position: relative;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-    box-sizing: content-box;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-.wexim .tp-bullet:not(:last-child) .tp-line {
-    height: 20px;
-    width: 3px;
-    background: white;
-    display: block;
-    margin: 0 auto;
-}
-
-.wexim .tp-bullet {
-    position: relative;
-    display: contents;
-    background: transparent;
-    cursor: pointer;
-    box-sizing: content-box;
-}
-
-.tp-bullet {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    background: rgba(255,255,255,.3);
-    cursor: pointer;
-}
-
-.wexim .tp-bullet.selected .tp-bullet-inner {
-    background: #ff573b;
-}
-
-.wexim .tp-bullet.selected .tp-bullet-inner {
-    transform: scale(1.4);
-    margin-top: 2px;
-    background: #ff573b;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -ms-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-.wexim.tp-bullets {
-    height: 110px !important;
-    width: 19px !important;
-    text-align: center;
-    display: inline-block;
-    position: relative;
-}
-
-
-/*==============================
-   SVG
-=============================*/
-svg {
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    display: block;
-    z-index: 100;
-}

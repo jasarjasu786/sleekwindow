@@ -14,7 +14,7 @@ if($_POST)
 
     $mail = new PHPMailer();
 
-    $your_email = "jasarjasu786786@gmail.com";
+    $your_email = "info.sleekwindow@gmail.com";
 
 
     //check if its an ajax request, exit if not
@@ -270,23 +270,23 @@ if($_POST)
 
 
     //Server settings
-//    $mail->isSMTP();                                            // Send using SMTP
-//    $mail->Host       = 'smtp.googlemail.com';                    // Set the SMTP server to send through
-//    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-//    $mail->Username   = 'website@gmail.com';                     // SMTP username
-//    $mail->Password   = 'your password';                         // SMTP password
-//    $mail->SMTPSecure = 'TLS';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-//    $mail->Port       = 587;                                    // TCP port to connect to
+   $mail->isSMTP();                                            // Send using SMTP
+   $mail->Host       = 'smtp.googlemail.com';                    // Set the SMTP server to send through
+   $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+   $mail->Username   = 'website.sleekwindow@gmail.com';                     // SMTP username
+   $mail->Password   = 'uxcqdifhkelvbptc';                         // SMTP password
+   $mail->SMTPSecure = 'TLS';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+   $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
     $mail->setFrom($user_Email,$user_Name);
-    $mail->addAddress($your_email, 'Theme Industry');     // Add a recipient
-    $mail->addReplyTo($your_email, 'Information');
+    $mail->addAddress($your_email, 'Sleekwindow Curtain & Blinds');     // Add a recipient
+    $mail->addReplyTo($your_email, 'Sleekwindow Curtain & Blinds');
 
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'New Contact Inquiry from your Website';
+    $mail->Subject = 'New Contact Inquiry from sleekwindow.ae';
     $mail->Body  = "<h4 style='text-align: center;padding: 25px 15px;background-color: #0c6c9e;color: #FFFFFF;font-size:16px;width:90%;border-radius: 10px;'>Hi There! You have a new inquiry from your website.</h4><br><br>";
 
     if(isset($_POST["userEmail"])) {
